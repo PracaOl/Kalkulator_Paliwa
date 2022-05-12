@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obliczanie Paliwa</title>
-</head>
-<body>
     <style>
         #tytul {
             text-align: center;
@@ -30,21 +28,23 @@
             font-style: italic;
         }
     </style>
+</head>
+<body>
     <h1 id="tytul">Obliczanie ceny paliwa!</h1>
     <h2 class = "text">Wybierz opcje do obliczenia paliwa.</h2>
     <p class = "text opcje">Wybierz paliwo!</p>
     <div class = "text">
         <input type="radio" name="wybierz1" value="BENZYNA" id="benzyna" onclick="benzyna()">
-        <label for="Benzyna">Benzyna (Domyślnie: 6,70 zł za Litr)</label>
+        <label for="benzyna">Benzyna (Domyślnie: 6,70 zł za Litr)</label>
     </div>
     <div class = "text">
         <input type="radio" name="wybierz1" value="ROPA" id="ropa" onclick="ropa()">
-        <label for="Ropa">Ropa (Domyślnie: 7,50 zł za Litr)</label>
+        <label for="ropa">Ropa (Domyślnie: 7,50 zł za Litr)</label>
     </div>
     <p class = "text opcje">Podaj liczbę litrów do obliczenia!</p>
     <div class = "text">
         <input type="number" name="liczba" id="numberbtn" class = "btnclass" onchange="zmien()">
-        <label for="liczba">Litrów</label>
+        <label for="numberbtn">Litrów</label>
     </div>
     <p class = "text opcje">Naciśnij przycisk aby zobaczyć wynik!</p>
     <button onclick = "btnclick()">Policz</button>
@@ -54,11 +54,11 @@
     <p class = "text zmiana">Kliknij ponownie zmienioną wartość (Benzyna lub Ropa, pod "Wybierz Paliwo!") aby zmieniany zadziałały!</p>
     <div class = "text">
         <input type="number" name="liczba" id="ben" class = "btnclass" onchange="b()">
-        <label for="liczba">Podaj cenę dla Benzyny.</label>
+        <label for="ben">Podaj cenę dla Benzyny.</label>
     </div>
     <div class = "text">
         <input type="number" name="liczba" id="rop" class = "btnclass" onchange="r()">
-        <label for="liczba">Podaj cenę dla Ropy.</label>
+        <label for="rop">Podaj cenę dla Ropy.</label>
     </div>
     <script>
         var inpute;
