@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obliczanie Paliwa</title>
+</head>
+<body>
+    <style>
+        #tytul {
+            text-align: center;
+            color: cyan;
+        }
+        body {
+            background-color: #2C2F33;
+            text-align: center;
+        }
+        .text {
+            color: white;
+        }
+        .btnclass {
+            width: 80px;
+        }
+        .opcje {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .zmiana {
+            font-style: italic;
+        }
+    </style>
+    <h1 id="tytul">Obliczanie ceny paliwa!</h1>
+    <h2 class = "text">Wybierz opcje do obliczenia paliwa.</h2>
+    <p class = "text opcje">Wybierz paliwo!</p>
+    <div class = "text">
+        <input type="radio" name="wybierz1" value="BENZYNA" id="benzyna" onclick="benzyna()">
+        <label for="Benzyna">Benzyna (Domyślnie: 6,70 zł za Litr)</label>
+    </div>
+    <div class = "text">
+        <input type="radio" name="wybierz1" value="ROPA" id="ropa" onclick="ropa()">
+        <label for="Ropa">Ropa (Domyślnie: 7,50 zł za Litr)</label>
+    </div>
+    <p class = "text opcje">Podaj liczbę litrów do obliczenia!</p>
+    <div class = "text">
+        <input type="number" name="liczba" id="numberbtn" class = "btnclass" onchange="zmien()">
+        <label for="liczba">Litrów</label>
+    </div>
+    <p class = "text opcje">Naciśnij przycisk aby zobaczyć wynik!</p>
+    <button onclick = "btnclick()">Policz</button>
+    <p class = "text opcje">Wynik:</p>
+    <p class = "text" id = "result">...</p>
+    <p class = "text opcje">Zmień cenę Benzyny lub cenę Ropy!</p>
+    <p class = "text zmiana">Kliknij ponownie zmienioną wartość (Benzyna lub Ropa, pod "Wybierz Paliwo!") aby zmieniany zadziałały!</p>
+    <div class = "text">
+        <input type="number" name="liczba" id="ben" class = "btnclass" onchange="b()">
+        <label for="liczba">Podaj cenę dla Benzyny.</label>
+    </div>
+    <div class = "text">
+        <input type="number" name="liczba" id="rop" class = "btnclass" onchange="r()">
+        <label for="liczba">Podaj cenę dla Ropy.</label>
+    </div>
+    <script>
+        var inpute;
+        var cena;
+        var cenab = 6.70;
+        var cenar = 7.50;
+        var wynik;
+        var be;
+        var ro;
+        function b() {
+            be = document.getElementById("ben").value;
+            cenab = be;
+        }
+        function r() {
+            ro = document.getElementById("rop").value;
+            cenar = ro;
+        }
+        function benzyna(){
+            cena = cenab; 
+        } 
+        function ropa() {
+            cena = cenar; 
+        }
+        function zmien() {
+            inpute = document.getElementById("numberbtn").value; 
+        }
+        function oblicz() {
+            wynik = inpute * cena;
+        }
+        function btnclick() {
+            oblicz()
+            document.getElementById("result").innerHTML = wynik + " zł"; 
+        }
+    </script>
+</body>
+</html>
